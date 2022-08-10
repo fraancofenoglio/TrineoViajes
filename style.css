@@ -478,7 +478,7 @@ option {
 .card img {
     margin: 2%;
     width: 250px;
-    max-height: 250px;
+    height: 220px;
     border-radius: 7px;
     /* border-top: 1px solid black; */
 }
