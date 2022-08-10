@@ -127,7 +127,7 @@ function priceMin(res) {
 export function filterCart(selTrip, cartButton) {
     const tripCart = {
         image: selTrip.querySelector("img").src,
-        title: selTrip.querySelector("h2").textContent,
+        title: selTrip.querySelector("h2").getAttribute("city"),
         price: selTrip.getAttribute("price"),
         quantity: 1,
         id: selTrip.getAttribute("data-id"),

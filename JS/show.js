@@ -21,6 +21,7 @@ export function showTrip(result) {
     const description = document.createElement("p");
 
     title.textContent += tr.title;
+    title.setAttribute("city", tr.city)
     card.appendChild(title);
 
     img.src += tr.img;
