@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRINEO - Viajes y turismo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="nav-desktop">
+
+        <div class="logo">
+            <a href="./index.html">
+                <h1>TRINEO</h1>
+            </a>
+        </div>
+        <div class="navigation-desktop-container">
+
+            <div class="navigation-desktop">
+                <div class="trip">
+                    <a href="./index.html#show-trip">VIAJES</a>
+                </div>
+                
+                <div class="login">
+                    <a href="./account.html">MI CUENTA</a>
+                </div>
+            </div>
+            
+            <div class="cart-container">
+                <button class="showCart">
+                    <!-- <div class="cart-counter"></div> -->
+                    <img style="width: 25px; height: 25px" src="./assets/cart.png" alt="">
+                    <div id="cart" class="cart">
+
+                        <table id="cart-list">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Viaje</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="cart-buttons">
+
+                            <a href="./index.html" class="empty-cart" id="empty-cart">Vaciar Carrito</a>
+                            
+                            <a href="#" id="buy-cart" >Comprar</a>
+                        </div>
+
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </nav>
+
+    <div id="main-container-hamburguer">
+    
+        <div id="hamburguer">
+            <button id="hb-btn">
+                <span class="topline span"></span>
+                <span class="middleline span1"></span>
+                <span class="bottomline span2"></span>
+
+                <ul class="ul-menu" id="menu">
+                    <li class="list-menu">
+                        <a class="link-list-menu" href="./index.html">INICIO</a>
+                    </li>
+    
+                    <li class="list-menu">
+                        <a class="link-list-menu" href="./index.html#show-trip">VIAJES</a>
+                    </li>
+                    <li class="list-menu">
+                        <a class="link-list-menu" href="./account.html">MI CUENTA</a>
+                    </li>
+                </ul>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <section class="intro">
+        <h1>Bienvenidos a <span>TRINEO</span> viajes y turismo</h1>
+
+        <div class="slider">
+            <ul>
+                <li>
+                    <img src="https://cdn.logitravel.com/wsimgresize/resize/crop/1920/350/cdn.logitravel.com/contenidos/fotos/CIUDADES_1920_350/15184.jpg?defaultImagePath=noimage.jpg&jpegQuality=97" alt="">
+                </li>
+                <li>
+                    <img src="https://www.keralaviajes.com/img/gallery/paris-oferta1.jpg" alt="">
+                </li>
+                <li>
+                    <img src="https://cdn.logitravel.com/wsimgresize/resize/crop/1920/350/cdn.logitravel.com/contenidos/fotos/CIUDADES_1920_350/21253.jpg?defaultImagePath=noimage.jpg&jpegQuality=97" alt="">
+                </li>
+                <li>
+                    <img src="https://cdn.logitravel.com/wsimgresize/resize/crop/1920/350/cdn.logitravel.com/contenidos/fotos/paises_1920_350/CH.jpg?defaultImagePath=noimage.jpg&jpegQuality=97" alt="">
+                </li>
+            </ul>
+        </div>
+        <!-- <img src="https://res.mundigea.com.ar/img/banners/banner-2565-1.jpg" alt=""> -->
+    </section>
+    
+    <section id="show-trip" class="show-trip">
+        <p>Chequeá los viajes que tenemos para vos! ↓↓↓↓</p>
+        <form id="formSearch" action="">
+            <div class="inputs-container">
+
+                <div>
+    
+                    <label for="search">Destino:</label>
+                    <input class="inputs" type="text" name="search" id="search" placeholder="País, Provincia o Ciudad">
+    
+                </div>
+                <div>
+    
+                    <label for="search">Transporte:</label>
+                    <select class="inputs" name="search2" id="search2">
+                        <option value="">Todos</option>
+                        <option value="avion">Avión</option>
+                        <option value="bus">Bus</option>
+                    </select>
+    
+                </div>
+                <div>
+    
+                    <label for="search">Precio Máximo:</label>
+                    <input class="inputs" type="number" name="search3" id="search3" placeholder="Precio Máx." min="0">
+    
+                </div>
+                <div>
+    
+                    <label for="search">Precio Mínimo:</label>
+                    <input class="inputs" type="number" name="search4" id="search4" placeholder="Precio Mín." min="0">
+                </div>
+
+            </div>
+
+            <button class="btn-search">Buscar</button>
+            <button id="btn-show-all" class="btn-show-all">Mostrar Todos</button>
+        </form>
+
+    </section>
+    <div class="search-trip"></div>
+
+    <section class="about-us">
+        <!-- <img src="https://fondosmil.com/fondo/31173.jpg" alt=""> -->
+        <div class="info-about-us">
+            <h2>Viajes a tu medida</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat labore enim a ipsa? Enim, voluptas illum nostrum libero delectus tempora, cupiditate reprehenderit provident minima distinctio nesciunt corporis, beatae aliquam quia!</p>
+        </div>
+    </section>
+
+
+    
+
+
+
+    <script type="module" src="./JS/app2.js"></script>
+    <script src="./JS/toggles.js"></script>
+
+</body>
+</html>

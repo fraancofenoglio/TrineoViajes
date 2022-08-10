@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TRINEO - Cuenta</title>
+</head>
+<body>
+    <nav class="nav-desktop">
+
+        <div class="logo">
+            <a href="./index.html">
+                <h1>TRINEO</h1>
+            </a>
+        </div>
+        <div class="navigation-desktop-container">
+
+            <div class="navigation-desktop">
+                <div class="trip">
+                    <a href="./index.html#show-trip">VIAJES</a>
+                </div>
+                
+                <div class="login">
+                    <a href="./account.html">MI CUENTA</a>
+                </div>
+            </div>
+            
+            <div class="cart-container">
+                <button class="showCart">
+                    <img style="width: 25px; height: 25px" src="./assets/cart.png" alt="">
+                    <div id="cart" class="cart">
+
+                        <table id="cart-list">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Viaje</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="cart-buttons">
+
+                            <a href="#" class="empty-cart" id="empty-cart" >Vaciar Carrito</a>
+
+                            <a href="#" id="buy-cart" >Comprar</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </nav>
+
+    <div id="main-container-hamburguer">
+    
+        <div id="hamburguer">
+            <button id="hb-btn">
+                <span class="topline span"></span>
+                <span class="middleline span1"></span>
+                <span class="bottomline span2"></span>
+
+                <ul class="ul-menu" id="menu">
+                    <li class="list-menu">
+                        <a class="link-list-menu" href="./index.html">INICIO</a>
+                    </li>
+    
+                    <li class="list-menu">
+                        <a class="link-list-menu" href='./index.html#show-trip'>VIAJES</a>
+                    </li>
+                    <li class="list-menu">
+                        <a class="link-list-menu" href="./account.html">MI CUENTA</a>
+                    </li>
+                </ul>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <main class="main-account">
+        <section class="login-inputs">
+            <h2>¿Tenés cuenta?</h2>
+            <form action="./index.html">
+                <div>
+
+                    <label for="email-input-login"> Email:</label>
+                    <input required type="email" name="email-input-login" id="email-input-login" placeholder="Ingrese su email">
+
+                </div>
+                <div>
+
+                    <label for="email-input-login"> Contraseña:</label>
+                    <input required type="password" name="password-input-login" id="password-input-login" placeholder="Contraseña">
+
+                </div>
+
+                <button type="submit">Ingresar</button>
+                
+            </form>
+        </section>
+
+        <section class="register-inputs">
+            <h2>¿Sos nuev@?</h2>
+
+            <form action="./index.html">
+
+                <div class="register-container">
+
+                    <div class="row1">
+
+                        <div>
+
+                            <label for="email-input-login"> Email:</label>
+                            <input required type="email" name="email-input-register" id="email-input-register" placeholder="Ingrese su email">
+
+                        </div>
+                        <div>
+
+                            <label for="email-input-login"> Repita el Email:</label>
+                            <input required type="email" name="email-input-register" id="email-input-register-repeat" placeholder="Vuelva a ingresar su email">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row2">
+
+                        <div>
+
+                            <label for="email-input-login"> Cree una contraseña:</label>
+                            <input required type="password" name="password-input-login" id="password-input-register" placeholder="Contraseña">
+
+                        </div>
+                        <div>
+
+                            <label for="email-input-login"> Repita la contraseña:</label>
+                            <input required type="password" name="password-input-login" id="password-input-register-repeat" placeholder="Vuelva a ingresar su contraseña">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button type="submit">Registrarse</button>
+
+            </form>
+
+        </section>
+    </main>
+
+
+
+    <script type="module" src="./JS/app2.js"></script>
+    <script src="./JS/toggles.js"></script>
+
+</body>
+</html>
