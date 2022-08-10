@@ -119,7 +119,7 @@ body {
     border: 1px solid #fff;
     height: auto;
     max-height: 70vh;
-    max-width: 95vW;
+    max-width: 95vw;
     overflow-y: scroll;
     overflow-x: hidden;
     min-height: 20vh;
@@ -127,10 +127,10 @@ body {
 
 #cart-list {
     min-height: 200px;
-    max-width: 95vW;
+    min-height: 20vh;
+    max-width: 95vw;
     height: auto;
     color: white;
-
 }
 
 #cart-list a {
