@@ -880,6 +880,66 @@ th {
     opacity: 1;
 }
 
+.about-us {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: row;
+    background-image: url("https://fondosmil.com/fondo/31173.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 2px -5px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+.info-about-us {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif
+}
+.info-about-us h2 {
+    font-weight:900;
+    font-size: 25px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 5%;
+}
+
+.infoButton {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: large;
+    padding: 10px 20px;
+    border-radius: 40px;
+    background:none;
+    border: none;
+    cursor: pointer;
+}
+.infoButton:hover{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.info-display-none {
+    display: none;
+
+}
+
 
 
 
@@ -1170,63 +1230,3 @@ th {
 
 
 /* -------------------------------------------------------- */
-.about-us {
-    width: 100vw;
-    height: 80vh;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    flex-direction: row;
-    background-image: url("https://fondosmil.com/fondo/31173.jpg");
-    background-position: center;
-    background-size: cover;
-    box-shadow: 2px -5px 5px rgba(0, 0, 0, 0.3);
-    
-}
-
-
-.info-about-us {
-    margin: 0 auto;
-    width: 80%;
-    min-height: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-around;
-    padding: 20px 50px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 7px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif
-}
-.info-about-us h2 {
-    font-weight:900;
-    font-size: 25px;
-    border-bottom: 1px solid #fff;
-    margin-bottom: 5%;
-}
-
-.infoButton {
-    text-decoration: none;
-    color: black;
-    font-weight: 700;
-    font-size: large;
-    padding: 10px 20px;
-    border-radius: 40px;
-    background:none;
-    border: none;
-    cursor: pointer;
-}
-.infoButton:hover{
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.info-display-none {
-    display: none;
-
-}
-
