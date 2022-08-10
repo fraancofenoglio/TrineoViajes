@@ -1,7 +1,6 @@
 import { toLocalStorage, filterCart } from "./app2.js";
 import { updateStock } from "./updateStock.js";
 
-
 export function toCart(cartButton){
     cartButton.addEventListener("click", () =>{
         updateStock()
@@ -12,7 +11,7 @@ export function toCart(cartButton){
             filterCart(selected, cartButton);
             
             toLocalStorage()
-            // counter()
+
         }
     })
 }

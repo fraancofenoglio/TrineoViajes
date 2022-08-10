@@ -1,4 +1,5 @@
-import {modalContainer, body, close, emptyCart} from "./app2.js"
+import {modalContainer, body, close } from "./variables.js";
+import { emptyCart } from "./app2.js";
 
 export function modalWindow(title, text, type) {
     close.setAttribute("id", "close");

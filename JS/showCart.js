@@ -1,4 +1,4 @@
-const tableBody = document.querySelector("#cart-list tbody");
+import { tableBody } from "./variables.js";
 
 export function showCart(cart) {
     tableBody.innerHTML = "";
@@ -14,5 +14,4 @@ export function showCart(cart) {
         row.setAttribute("quantity-counter", (element.quantity));
         tableBody.appendChild(row)
     })
-
 }

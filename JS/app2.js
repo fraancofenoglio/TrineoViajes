@@ -4,25 +4,22 @@ import { validation } from "./validation.js";
 import { showCart } from "./showCart.js";
 import { updateStock } from "./updateStock.js";
 import { modalWindow } from "./modalWindow.js";
+import { emptyBTN, buyButton, formSearch, inputSearch, inputSearch2, inputSearch3, inputSearch4, btnSearch, cartContainer, showAllBTN } from "./variables.js";
 
+// const emptyBTN = document.querySelector("#empty-cart");
 
-const emptyBTN = document.querySelector("#empty-cart")
-
-const buyButton = document.getElementById("buy-cart");
-export const modalContainer = document.createElement("div");
-export const body = document.querySelector("body");
-// const cartCounter = document.querySelector(".cart-counter");
-
-
-const formSearch = document.getElementById("formSearch");
-const inputSearch = document.getElementById("search");
-const inputSearch2 = document.getElementById("search2");
-const inputSearch3 = document.getElementById("search3");
-const inputSearch4 = document.getElementById("search4");
-const btnSearch = document.querySelector(".btn-search");
-// const tableBody = document.querySelector("#cart-list tbody");
-const cartContainer = document.querySelector("#cart");
-const showAllBTN = document.getElementById("btn-show-all")
+// const buyButton = document.getElementById("buy-cart");
+// export const modalContainer = document.createElement("div");
+// export const body = document.querySelector("body");
+// const formSearch = document.getElementById("formSearch");
+// const inputSearch = document.getElementById("search");
+// const inputSearch2 = document.getElementById("search2");
+// const inputSearch3 = document.getElementById("search3");
+// const inputSearch4 = document.getElementById("search4");
+// const btnSearch = document.querySelector(".btn-search");
+// const cartContainer = document.querySelector("#cart");
+// const showAllBTN = document.getElementById("btn-show-all");
+// export const close = document.createElement("button");
 
 window.addEventListener("DOMContentLoaded", () =>{
     checkLocalStorage()
@@ -43,6 +40,17 @@ window.addEventListener("DOMContentLoaded", () =>{
         inputSearch4.addEventListener("blur", searchTrip);
         showTrip(trip);
     }
+    const infoBTN = document.querySelectorAll(".infoButton");
+
+    infoBTN.forEach(i => {
+        i.addEventListener("click", () =>{
+
+            const par = (i.parentElement.querySelector("p").textContent);
+            const tt = (i.parentElement.querySelector("h2").textContent);
+            modalWindow(tt , par, "modal-message");
+        })
+    
+    });
     
     // counter()
     buyButton.addEventListener("click", buyCart);
@@ -196,43 +204,31 @@ export function emptyCart() {
     showCart(cart);
     window.location.reload();
 }
-  
-export const close = document.createElement("button");
 
 function buyCart() {
     if (cart.length) {
 
         modalWindow("¡Felicitaciones!", "¡Compra realizada con éxito!", "modal-message")
 
-        // modalContainer.lastElementChild.appendChild(close);
-
-        // const closeButton = document.getElementById("close");
-        // closeButton.addEventListener("click", () =>{
-        //     body.removeChild(body.lastChild)
-        //     emptyCart()
-        // })
-
     } else {
         modalWindow("Error", "Debes agregar al carrito primero", "modal-error")
     }
 }
 
-window.addEventListener("load", () => {
+// window.addEventListener("load", () => {
 
-    const infoBTN = document.querySelectorAll(".infoButton");
+//     const infoBTN = document.querySelectorAll(".infoButton");
 
-    const cardInfo = infoBTN.forEach(i => {
-        i.addEventListener("click", () =>{
-            const par = (i.parentElement.querySelector("p").textContent);
-            const tt = (i.parentElement.querySelector("h2").textContent);
-            modalWindow(tt , par, "modal-message")
-                //aca tengo que capturar lo que hay en el parrafo y mandarlo a la funcion modal
-        }) //agregar boton a la funcion modalWIndow
+//     infoBTN.forEach(i => {
+//         i.addEventListener("click", () =>{
+
+//             const par = (i.parentElement.querySelector("p").textContent);
+//             const tt = (i.parentElement.querySelector("h2").textContent);
+//             modalWindow(tt , par, "modal-message");
+//         })
     
-    });
-
-    
-})
+//     });
+// });
 
 // export function counter() {
 //     const tr = body.querySelectorAll("#cart-list tbody tr");
