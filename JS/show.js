@@ -1,4 +1,5 @@
 import { toCart } from "./toCart.js";
+import { updateStock } from "./updateStock.js";
 //función que muestra las cards
 export function showTrip(result) {
     cleanHTML()
@@ -81,7 +82,7 @@ export function showTrip(result) {
     card.setAttribute("stock", tr.stock);
     card.setAttribute("price", tr.price);
     searchResult.appendChild(card);
-    
+    updateStock()
     })
 }
 

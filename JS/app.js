@@ -50,16 +50,16 @@ const obj = {
 };
 //filtros de búsqueda
 function searchTrip() {
-
+    checkLocalStorage();
     obj.location = inputSearch.value.toLowerCase();
     obj.transport = inputSearch2.value.toLowerCase();
     obj.priceMax = inputSearch3.value;
     obj.priceMin = inputSearch4.value;
-        
+    
     result = trip.filter(locationFilter).filter(transportFilter).filter(priceMax).filter(priceMin);
     if (result.length) {
         showTrip(result);
-
+        
     } else {
         modalWindow("Lo sentimos", "No hay viajes que coincidan con tu búsqueda :(", "modal-error");         
     }
@@ -151,7 +151,7 @@ export function toLocalStorage () {
     localStorage.setItem("Cart", JSON.stringify(cart));
 }
 //funcion que trae el carrito del localstorage y si existe lo muestra en el HTML
-function checkLocalStorage() {
+export function checkLocalStorage() {
     const LSCart = JSON.parse(localStorage.getItem("Cart"));
     if (LSCart) {
         cart = LSCart;
