@@ -4,11 +4,11 @@ import { validation } from "./validation.js";
 import { showCart } from "./showCart.js";
 import { updateStock } from "./updateStock.js";
 import { modalWindow } from "./modalWindow.js";
-import { emptyBTN, buyButton, formSearch, inputSearch, inputSearch2, inputSearch3, inputSearch4, btnSearch, cartContainer, showAllBTN, body } from "./variables.js";
+import { emptyBTN, searchResult, buyButton, formSearch, inputSearch, inputSearch2, inputSearch3, inputSearch4, btnSearch, cartContainer, showAllBTN, body } from "./variables.js";
 
 window.addEventListener("DOMContentLoaded", () =>{
     checkLocalStorage();
-
+    
     emptyBTN.addEventListener("click", emptyCart);
 
     if (formSearch) {  
@@ -25,17 +25,9 @@ window.addEventListener("DOMContentLoaded", () =>{
         inputSearch4.addEventListener("blur", searchTrip);
         showTrip(trip);
     }
-    const infoBTN = document.querySelectorAll(".infoButton");
     
-    infoBTN.forEach(i => {
-        i.addEventListener("click", () =>{
-            
-            const par = (i.parentElement.querySelector("p").textContent);
-            const tt = (i.parentElement.querySelector("h2").textContent);
-            modalWindow(tt , par, "modal-message");
-        })
-        
-    });
+    searchResult.addEventListener("click", showInfo)
+
     cartContainer.addEventListener("click", deleteElement);
 
     buyButton.addEventListener("click", buyCart);
@@ -178,3 +170,14 @@ function buyCart() {
         modalWindow("Error", "Debes agregar al carrito primero", "modal-error");
     }
 };
+
+function showInfo(e) {
+    e.preventDefault()
+    const infoclick = e.target.matches(".infoButton");
+    if (infoclick) {
+        
+        const par = (e.target.parentElement.querySelector("p").textContent);
+        const tt = (e.target.parentElement.querySelector("h2").textContent);
+        modalWindow(tt , par, "modal-message");
+    }
+}
