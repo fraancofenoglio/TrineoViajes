@@ -4,6 +4,7 @@ import { validation } from "./validation.js";
 import { showCart } from "./showCart.js";
 import { updateStock } from "./updateStock.js";
 import { modalWindow } from "./modalWindow.js";
+import { showInfo } from "./showInfo.js";
 import { emptyBTN, searchResult, buyButton, formSearch, inputSearch, inputSearch2, inputSearch3, inputSearch4, btnSearch, cartContainer, showAllBTN, body } from "./variables.js";
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -25,8 +26,10 @@ window.addEventListener("DOMContentLoaded", () =>{
         inputSearch4.addEventListener("blur", searchTrip);
         showTrip(trip);
     }
-    
-    searchResult.addEventListener("click", showInfo)
+
+    if (searchResult) {
+        searchResult.addEventListener("click", showInfo);
+    }
 
     cartContainer.addEventListener("click", deleteElement);
 
@@ -170,14 +173,3 @@ function buyCart() {
         modalWindow("Error", "Debes agregar al carrito primero", "modal-error");
     }
 };
-
-function showInfo(e) {
-    e.preventDefault()
-    const infoclick = e.target.matches(".infoButton");
-    if (infoclick) {
-        
-        const par = (e.target.parentElement.querySelector("p").textContent);
-        const tt = (e.target.parentElement.querySelector("h2").textContent);
-        modalWindow(tt , par, "modal-message");
-    }
-}
