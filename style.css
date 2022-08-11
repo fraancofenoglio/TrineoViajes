@@ -13,9 +13,6 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: rgb(35, 35, 35);
-    /* background-color: #311847; */
-    /* background-color: #c31432; */
-
 }
 
 .nav-desktop {
@@ -24,17 +21,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border-bottom: 2px solid black; */
     align-items: center;
     margin: auto;
     position: sticky;
     top: 0;
     box-shadow: 2px 4px 5px rgba(179, 176, 176, 0.3);
-    /* background-color: rgba(174, 174, 174, 0.9); */
-    /* background-color: #311847; */
-    /* background-color: #c31432; */
     background: linear-gradient(to left, #c31432, #240b36);
-    /* background: linear-gradient(to right, #333333, #dd1818); */
 }
 
 .logo {
@@ -46,7 +38,6 @@ body {
     width: 25%;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Bebas Neue', cursive; */
 }
 
 .logo a {
@@ -55,7 +46,6 @@ body {
     text-decoration: none;
     color: #fff;
     text-shadow: 2.5px 2.5px 2.5px rgba(0,0,0,0.5);
-
 }
 
 .navigation-desktop-container {
@@ -75,11 +65,10 @@ body {
     text-decoration: none;
     color: #fff;
     text-shadow: 2.5px 2.5px 2.5px rgba(0,0,0,0.5);
-    /* font-family: 'Bebas Neue', cursive;
-    font-size: 25px; */
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
+
 .navigation-desktop a:hover {
     font-size: 20px;
     text-decoration: none;
@@ -142,9 +131,9 @@ body {
     padding: 5px 11px;
     border-radius: 10px;
 }
+
 #cart-list a:hover{
     background-color: rgb(187, 2, 2);
-
 }
 
 tbody td {
@@ -152,8 +141,6 @@ tbody td {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 15px;
-    /* padding: 10px; */
-
 }
 
 .cart-buttons {
@@ -195,6 +182,7 @@ tbody td {
     justify-content: center;
     align-items: center;
 }
+
 #buy-cart:hover {
     background-color: rgb(130, 204, 2);
 }
@@ -203,7 +191,6 @@ tbody td {
     background: none;
     border: none;
     cursor: pointer;
-
 }
 
 .hb-btn span {
@@ -228,13 +215,10 @@ tbody td {
     align-items: center;
     justify-content: space-evenly;
     background-color: rgb(40, 40, 40);
-    /* background-color: #A01A7D; */
-
 }
 
 .intro h1 {
     color: #fff;
-    /* color: #A01A7D; */
     font-size: 40px;
     text-align: center;
     margin-bottom: 2%;
@@ -297,7 +281,6 @@ tbody td {
     }
 }
 
-
 #formSearch {
     display: flex;
     flex-direction: column;
@@ -334,6 +317,7 @@ label {
     font-weight: 700;
     text-shadow: 2.5px 2.5px 2.5px rgba(0,0,0,0.5);
 }
+
 select {
     border: 2px solid black;
 }
@@ -348,6 +332,7 @@ option {
     display: flex;
     flex-direction: column;
 }
+
 .inputs-container div {
     display: flex;
     flex-direction: column;
@@ -432,6 +417,7 @@ option {
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 1);
 }
+
 .card:hover {
     box-shadow: 0px 0px 8px 8px rgba(186, 185, 185, 0.54);
 }
@@ -454,7 +440,6 @@ option {
     font-size: 35px;
     color: #fff;
     font-family: 'Bebas Neue', cursive;
-
 }
 
 .info {
@@ -469,7 +454,6 @@ option {
 
 .divDays {
     display: flex;
-    /* width: 50%; */
     flex-direction: row;
     justify-content:space-evenly;
     align-items: center;
@@ -480,8 +464,8 @@ option {
     width: 250px;
     height: 220px;
     border-radius: 7px;
-    /* border-top: 1px solid black; */
 }
+
 .cart-counter {
     width: 15px;
     height: 15px;
@@ -489,10 +473,11 @@ option {
     position: sticky;
     border-radius: 50%;
 }
+
 .cart-counter-item {
     background-color: red;
-
 }
+
 .cartButton {
     padding: 10px 30px;
     border-radius: 40px;
@@ -502,8 +487,6 @@ option {
     color: #fff;
     font-weight: bold;
     box-shadow: 2.5px 2.5px 2.5px rgba(0,0,0,0.15);
-    /* font-family: 'Bebas Neue', cursive;
-    font-size: 18px; */
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     margin-bottom: 2%;
@@ -518,12 +501,11 @@ option {
     background-color: gray;
     color: darkgrey;
     box-shadow: 2.5px 2.5px 2.5px rgba(0,0,0,0.15);
-    /* font-family: 'Bebas Neue', cursive;
-    font-size: 18px; */
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     margin-bottom: 2%;
 }
+
 .noStock:hover{
     padding: 10px 30px;
     border-radius: 40px;
@@ -533,14 +515,11 @@ option {
     color: darkgrey;
     box-shadow: 2.5px 2.5px 2.5px rgba(0,0,0,0.15);
 }
-
 /* --------------------------- */
-
 #main-container-hamburguer {
     display: flex;
     position: sticky;
     top: 70px;
-    /* con position sticky se me superpone sobre el carrito */
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -549,8 +528,6 @@ option {
     background:rgba(0, 0, 0, 0.5);
 }
 
-
-
 #hamburguer button {
     background: none;
     border: 0;
@@ -558,7 +535,6 @@ option {
     padding: 0;
     width: 60px;
     height: 50px;
-
 }
 
 #hamburguer button span {
@@ -568,7 +544,6 @@ option {
     width: 60%;
     margin: 3px;
     height: 3px;
-
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
@@ -589,9 +564,6 @@ option {
 
 .mostrarMenu {
     display: block;
-    /* flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; */
 }
 
 .link-list-menu, .list-menu{
@@ -601,96 +573,70 @@ option {
     font-size: 40px;
 }
 
-
-
-
 /* apertura de boton hamburguesa */
-
 #hamburguer button.open .topline {
     animation-name: top-line-animation;
 }
-
 #hamburguer button.open .middleline {
     animation-name: middle-line-animation;
 }
-
 #hamburguer button.open .bottomline {
     animation-name: bottom-line-animation;
 }
-
 /* cierre de boton hamburguersa */
-
 #hamburguer button .topline {
     animation-name: top-line-animation-close;
 }
-
 #hamburguer button .middleline {
     animation-name: middle-line-animation-close;
 }
-
 #hamburguer button .bottomline {
     animation-name: bottom-line-animation-close;
 }
-
 /* animacion apertura */
-
 @keyframes top-line-animation{
-
     50%, 100%{
         margin: 0 auto;
         transform: translateY(3px) rotate(-45deg);
     }
 }
-
 @keyframes bottom-line-animation{
-
     50%, 100%{
         margin: 0 auto;
         transform: translateY(-3px) rotate(45deg);
     }
 }
-
 @keyframes middle-line-animation{
-
     20%, 100%{
         margin: 0 auto;
         width: 0;
         opacity: 0;
     }
 }
-
 /* animacion cierre */
-
 @keyframes top-line-animation-close{
-
     0%{
         margin: 0 auto;
         transform: translateY(3px) rotate(-45deg);
     }
-
     50%, 100%{
         margin: 5px auto;
         transform: translateY(0px) rotate(0deg);
     }
 }
-
 @keyframes middle-line-animation-close{
-
     0%{
         margin: 0 auto;
         width: 0;
         opacity: 0;
     }
-
     20%, 100%{
         margin: 0 auto;
         width: 60%;
         opacity: 1;
     }
 }
-
 @keyframes bottom-line-animation-close{
-
     0%{
         margin: 0 auto;
         transform: translateY(-3px) rotate(45deg);
@@ -701,11 +647,9 @@ option {
     }
 }
 
-
 .cart {
     display: none;
     background: white;
-
 }
 
 .open-cart {
@@ -738,7 +682,6 @@ th:nth-child(5), th:nth-child(1){
     padding: 0px;
 }
 
-
 .main-account{
     display: flex;
     flex-direction: column;
@@ -750,12 +693,14 @@ th:nth-child(5), th:nth-child(1){
     font-family: 'Bebas Neue', cursive;
     padding-bottom: 5%;
 }
+
 .main-account h2 {
     text-align: center;
     margin-bottom: 4%;
     color: #fff;
     font-size: 35px;
 }
+
 .login-inputs, .register-inputs{
     display: flex;
     margin-top: 5%;
@@ -764,7 +709,6 @@ th:nth-child(5), th:nth-child(1){
     min-height: 40vh;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(175, 174, 174, 0.8); */
     border-radius: 7px;
     background: linear-gradient(to bottom, #333333, #dd1818);
 }
@@ -799,25 +743,28 @@ th:nth-child(5), th:nth-child(1){
     outline: 0;
     margin-bottom: 5%;
 }
+
 .main-account input:focus {
     background-color: #fff;
     color: rgb(24, 24, 24);
     font-size: 16px;
     font-weight: 900;
 }
+
 .login-inputs form {
     display: flex;
     flex-direction: column;
     width: 90%;
     border-top: 1px solid #fff;
-
 }
+
 .register-inputs form {
     display: flex;
     flex-direction: column;
     width: 90%;
     border-top: 1px solid #fff;
 }
+
 .register-inputs form button {
     align-self: center;
 }
@@ -850,19 +797,19 @@ th:nth-child(5), th:nth-child(1){
     border-radius: 7px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-    
 }
+
 .modal-container h3{
     font-size: 35px;
     margin: 5%;
     margin-top: 0%;
     font-family: 'Bebas Neue', cursive;
 }
+
 .modal-message p {
     font-size: 20px;
     opacity: 0.8;
 }
-
 
 .modal-error {
     display: flex;
@@ -879,8 +826,8 @@ th:nth-child(5), th:nth-child(1){
     border-radius: 7px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-
 }
+
 .modal-error p {
     font-size: 20px;
     opacity: 1;
@@ -897,9 +844,7 @@ th:nth-child(5), th:nth-child(1){
     background-position: center;
     background-size: cover;
     box-shadow: 2px -5px 5px rgba(0, 0, 0, 0.3);
-    
 }
-
 
 .info-about-us {
     margin: 0 auto;
@@ -918,6 +863,7 @@ th:nth-child(5), th:nth-child(1){
     font-weight: 700;
     font-family: 'Open Sans', sans-serif
 }
+
 .info-about-us h2 {
     font-weight:900;
     font-size: 25px;
@@ -936,6 +882,7 @@ th:nth-child(5), th:nth-child(1){
     border: none;
     cursor: pointer;
 }
+
 .infoButton:hover{
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
@@ -980,11 +927,7 @@ footer {
 .dev a:hover {
     color: #fff;
 }
-
-
-
-
-
+/* media querys */
 @media only screen and (max-width: 800px){
     .navigation-desktop{
         width: 80%;
@@ -992,10 +935,7 @@ footer {
     .navigation-desktop-container {
         width: 50%;
     }
-
 }
-
-
 /* dektop */
 @media only screen and (min-width: 800px){
 
@@ -1020,7 +960,6 @@ footer {
     #main-container-hamburguer {
         background: none;
         display: none;
-
     }
     .intro h1 {
         width: 100%;
@@ -1051,12 +990,13 @@ footer {
         margin: 0;
         margin-bottom: 5%;
         text-align: center;
-
     }
+
     .cart-buttons {
         display: flex;
         justify-content: space-around;
     }
+
     th {
         padding: 12px 28px;
         font-family: 'Open Sans', sans-serif;
@@ -1070,8 +1010,8 @@ footer {
     .inputs-container {
         display: grid;
         grid-template-columns: repeat(2, 25vw);
-
     }
+
     .inputs-container div {
         display: flex;
         flex-direction: column;
@@ -1097,15 +1037,16 @@ footer {
         margin: 0 auto;
         margin-bottom: 5%;
     }
+
     .card {
         margin: 0 auto;
-        height: 400px;
+        height: 500px;
         width: 300px;
     }
+
     .card h2 {
         padding: 10px;
     }
-    
 
     .main-account{
         display: flex;
@@ -1113,7 +1054,6 @@ footer {
         width: 100%;
         min-height: 60vh;
         justify-content: space-evenly;
-
     }
     
     .main-account h2 {
@@ -1152,12 +1092,14 @@ footer {
         outline: 0;
         margin-bottom: 5%;
     }
+
     .main-account input:focus {
         background-color: #fff;
         color: rgb(24, 24, 24);
         font-size: 16px;
         font-weight: 900;
     }
+
     .main-account form {
         display: flex;
         width: 90%;
@@ -1166,11 +1108,12 @@ footer {
         align-items: center;
         min-height: 50vh;
         max-height: 50vh;
-        /* border-radius: 7px; */
     }
+
     .register-inputs button {
         margin-top: 8%;
     }
+
     .login-inputs div {
         display: flex;
         flex-direction: column;
@@ -1240,7 +1183,6 @@ footer {
     }
     .slider li{
         width: 100%;
-        /* height: 350px; */
     }
     .info-about-us h2 {
         margin-bottom: 5%;
@@ -1268,7 +1210,6 @@ footer {
         justify-content: center;
         margin-bottom: 5%;
     }
-    
 }
 @media only screen and (min-width: 1200px){
     .card {
@@ -1282,10 +1223,3 @@ footer {
         border-radius: 7px;
     }
 }
-
-
-
-
-
-
-/* -------------------------------------------------------- */

@@ -1,34 +1,34 @@
 import {modalContainer, body, close } from "./variables.js";
-import { emptyCart } from "./app2.js";
-
+import { emptyCart } from "./app.js";
+//funcion que se encarga de crear y mostrar los mensajes de error y comfirmación
 export function modalWindow(title, text, type) {
     close.setAttribute("id", "close");
     close.setAttribute("type", "button");
     close.textContent = "Aceptar";
-
+    
     modalContainer.classList.add("modal-container");
     modalContainer.innerHTML = `
-    <div class="${type}">
-        <h3>${title}</h3>
+        <div class="${type}">
+            <h3>${title}</h3>
     
-        <p>
-            ${text} 
-        </p>
-    </div>
+            <p>
+                ${text} 
+            </p>
+        </div>
     `
     if (type === "modal-message") {
         modalContainer.lastElementChild.appendChild(close);
     }
-
+    
     body.appendChild(modalContainer);
-
+    
     if (type === "modal-error") {
         setTimeout(() => {
-
+            
             body.removeChild(body.lastChild)
-    }, 3000);
+        }, 3000);
     }
-
+    
     const closeButton = document.getElementById("close");
 
     closeButton.addEventListener("click", () =>{

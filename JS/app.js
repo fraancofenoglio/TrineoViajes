@@ -4,27 +4,12 @@ import { validation } from "./validation.js";
 import { showCart } from "./showCart.js";
 import { updateStock } from "./updateStock.js";
 import { modalWindow } from "./modalWindow.js";
-import { emptyBTN, buyButton, formSearch, inputSearch, inputSearch2, inputSearch3, inputSearch4, btnSearch, cartContainer, showAllBTN } from "./variables.js";
-
-// const emptyBTN = document.querySelector("#empty-cart");
-
-// const buyButton = document.getElementById("buy-cart");
-// export const modalContainer = document.createElement("div");
-// export const body = document.querySelector("body");
-// const formSearch = document.getElementById("formSearch");
-// const inputSearch = document.getElementById("search");
-// const inputSearch2 = document.getElementById("search2");
-// const inputSearch3 = document.getElementById("search3");
-// const inputSearch4 = document.getElementById("search4");
-// const btnSearch = document.querySelector(".btn-search");
-// const cartContainer = document.querySelector("#cart");
-// const showAllBTN = document.getElementById("btn-show-all");
-// export const close = document.createElement("button");
+import { emptyBTN, buyButton, formSearch, inputSearch, inputSearch2, inputSearch3, inputSearch4, btnSearch, cartContainer, showAllBTN, body } from "./variables.js";
 
 window.addEventListener("DOMContentLoaded", () =>{
-    checkLocalStorage()
+    checkLocalStorage();
 
-    emptyBTN.addEventListener("click", emptyCart)
+    emptyBTN.addEventListener("click", emptyCart);
 
     if (formSearch) {  
         formSearch.addEventListener("submit", e => e.preventDefault());
@@ -41,97 +26,80 @@ window.addEventListener("DOMContentLoaded", () =>{
         showTrip(trip);
     }
     const infoBTN = document.querySelectorAll(".infoButton");
-
+    
     infoBTN.forEach(i => {
         i.addEventListener("click", () =>{
-
+            
             const par = (i.parentElement.querySelector("p").textContent);
             const tt = (i.parentElement.querySelector("h2").textContent);
             modalWindow(tt , par, "modal-message");
         })
-    
+        
     });
-    
-    // counter()
+    cartContainer.addEventListener("click", deleteElement);
+
     buyButton.addEventListener("click", buyCart);
     updateStock();
 }
 );  
 
-//resultado de los filtros ↓
+//array vacios de carrito y resultado de búsquedas
+export let result = [];
+export let cart = [];
 
-export let result = []
-export let cart = []
-//click para filtrar los resultados de la busqueda
 const obj = {
     location: "",
     transport: "",
     priceMax: 0,
     priceMin: 0
-}
+};
+//filtros de búsqueda
 function searchTrip() {
 
     obj.location = inputSearch.value.toLowerCase();
     obj.transport = inputSearch2.value.toLowerCase();
     obj.priceMax = inputSearch3.value;
     obj.priceMin = inputSearch4.value;
-
-    // if (inputValue != "") {
         
-        result = trip.filter(locationFilter).filter(transportFilter).filter(priceMax).filter(priceMin)
-        if (result.length) {
+    result = trip.filter(locationFilter).filter(transportFilter).filter(priceMax).filter(priceMin);
+    if (result.length) {
+        showTrip(result);
 
-            showTrip(result)
+    } else {
+        modalWindow("Lo sentimos", "No hay viajes que coincidan con tu búsqueda :(", "modal-error");         
+    }
+};
 
-        } else {
-            modalWindow("Lo sentimos", "No hay viajes que coincidan con tu búsqueda :(", "modal-error");
-            
-        }
-    // } else {
-    //     modalWindow("Error", "Debes completar los campos obligatorios", "modal-error");
-    // }
+//funciones de filtros
 
-    // formSearch.reset()
-}
-
-//filtros
-
-
-// function locationFilter(res) {
-//     if (inputSearch.value.toLowerCase()) {
-//         return (res.country.toLowerCase() === inputSearch.value.toLowerCase()) || (res.province.toLowerCase() === inputSearch.value.toLowerCase()) || (res.city.toLowerCase() === inputSearch.value.toLowerCase())
-//     }
-//     return res
-// }
 function locationFilter(res) {
     if (obj.location) {
         return (res.country.toLowerCase() === obj.location) || (res.province.toLowerCase() === obj.location) || (res.city.toLowerCase() === obj.location)
     }
     return res
-}
+};
 
 function transportFilter(res) {
     if(obj.transport){
         return res.transport.toLowerCase() === obj.transport
     } 
     return res
-}
+};
 
 function priceMax(res) {
     if(obj.priceMax){
         return res.price <= obj.priceMax
     }
     return res
-}
+};
 function priceMin(res) {
     if(obj.priceMin){
         return res.price >= obj.priceMin
     }
     return res
-}
+};
 
-
-//esta funcion crea un objeto vacio y lo agrega a un array llamado cart
+//esta funcion crea un objeto vacio y lo agrega al array cart
 export function filterCart(selTrip, cartButton) {
     const tripCart = {
         image: selTrip.querySelector("img").src,
@@ -140,11 +108,11 @@ export function filterCart(selTrip, cartButton) {
         quantity: 1,
         id: selTrip.getAttribute("data-id"),
         stock: selTrip.getAttribute("stock")-1
-    }
+    };
     
     //esta funciona valida si ya existe un viaje en el carrito, le suma la cantidad
     //y le resta el stock
-    const present = cart.some(presTrip => presTrip.id === tripCart.id)
+    const present = cart.some(presTrip => presTrip.id === tripCart.id);
     if (present) {
         cart.map(tripSaved => {
             if (tripSaved.id === tripCart.id) {
@@ -160,86 +128,53 @@ export function filterCart(selTrip, cartButton) {
     showCart(cart);
 }
 
-cartContainer.addEventListener("click", deleteElement);
 // funcion para eliminar elementos del carrito
 export function deleteElement(e) {
     e.preventDefault();
-    
     const deleteEl = e.target.matches(".delete-element");
 
     if (deleteEl) {
         const tripID = e.target.getAttribute("data-id");
 
         cart = cart.filter(trip => trip.id !== tripID);
-        const prueba = document.getElementById(`${tripID}`)
+        const prueba = document.getElementById(`${tripID}`);
         if (prueba) {
             
             if (tripID === prueba.getAttribute("data-id")) {
                 const btnCart = prueba.querySelector(".cartButton");
                 btnCart.classList.toggle("noStock");
                 btnCart.removeAttribute("disabled");
-                btnCart.textContent = "Agregar al carrito"
-            }
-        }
+                btnCart.textContent = "Agregar al carrito";
+            };
+        };
         toLocalStorage();
         showCart(cart);
-    }
-}
-
+    };
+};
+//funcion para setear el carrito en localstorage
 export function toLocalStorage () {
     localStorage.setItem("Cart", JSON.stringify(cart));
 }
-
+//funcion que trae el carrito del localstorage y si existe lo muestra en el HTML
 function checkLocalStorage() {
     const LSCart = JSON.parse(localStorage.getItem("Cart"));
     if (LSCart) {
         cart = LSCart;
         showCart(cart);
-    }
-}
-
+    };
+};
+//funcion para vaciar el carrito
 export function emptyCart() {
-    cart = []
+    cart = [];
     toLocalStorage();
     showCart(cart);
     window.location.reload();
-}
-
+};
+//funcion para comprar el carrito
 function buyCart() {
     if (cart.length) {
-
-        modalWindow("¡Felicitaciones!", "¡Compra realizada con éxito!", "modal-message")
-
+        modalWindow("¡Felicitaciones!", "¡Compra realizada con éxito!", "modal-message");
     } else {
-        modalWindow("Error", "Debes agregar al carrito primero", "modal-error")
+        modalWindow("Error", "Debes agregar al carrito primero", "modal-error");
     }
-}
-
-// window.addEventListener("load", () => {
-
-//     const infoBTN = document.querySelectorAll(".infoButton");
-
-//     infoBTN.forEach(i => {
-//         i.addEventListener("click", () =>{
-
-//             const par = (i.parentElement.querySelector("p").textContent);
-//             const tt = (i.parentElement.querySelector("h2").textContent);
-//             modalWindow(tt , par, "modal-message");
-//         })
-    
-//     });
-// });
-
-// export function counter() {
-//     const tr = body.querySelectorAll("#cart-list tbody tr");
-//     tr.forEach(t => {
-//        const quan = t.getAttribute("quantity-counter");
-//        console.log(quan);
-//     //    quan.reduce()
-        
-//     });
-//     if (cart.length !== 0){
-//         cartCounter.classList.toggle("cart-counter-item")
-//         cartCounter.textContent = cart.length
-//     }
-// }
+};

@@ -1,5 +1,5 @@
 import { toCart } from "./toCart.js";
-
+//función que muestra las cards
 export function showTrip(result) {
     cleanHTML()
     result.map((tr) => {

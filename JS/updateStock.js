@@ -1,5 +1,5 @@
+//función para actualizar los botones
 export function updateStock (){
-
     const getStock = document.querySelectorAll("#cart a");
 
     getStock.forEach(st => {

@@ -1,5 +1,5 @@
 import { tableBody } from "./variables.js";
-
+//función que muestra el carrito
 export function showCart(cart) {
     tableBody.innerHTML = "";
     cart.map(element => {
